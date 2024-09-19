@@ -1,0 +1,74 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100vw;
+    box-shadow: 0 5px 8px 0px #d4d4d4;
+  }
+  h1 {
+    margin-left: 2rem;
+  }
+  
+  h2 {
+    margin-right: 2rem;
+  }
+  main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  form {
+    display: flex;
+    width: 80vw;
+    flex-direction: column;
+    margin-top: 3rem;
+    align-self: center;
+  }
+  #title {
+    border-radius: 0.4rem;
+    width: 50%;
+    height: 2rem;
+  }
+  #contentLabel {
+    margin-top: 1rem;
+  }
+  #content {
+    border-radius: 0.4rem;
+    width: max-fit;
+    height: 6rem;
+  }
+  #submit {
+    width: 8rem;
+    height: 2.6rem;
+    align-self: end;
+    margin-top: 1rem;
+  }
+  section {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+    width: 80vw;
+    align-self: center;
+  }
+  section h1 {
+    grid-column: 1 / -1;
+    margin: 0;
+  }
+  article {
+    box-shadow: 0 5px 8px 0px #d4d4d4;
+    border-radius: 0.4rem;
+    padding: 0 2rem;
+  }
+  article button {
+    float: right;
+    margin-bottom: 1rem;
+  }
+  #myTodos {
+    margin-left: 5.4rem;
+  }
+  
