@@ -2,6 +2,8 @@ import './App.css'
 import Header from './components/Header' 
 import Experiences from './components/Experiences' 
 import Contact from './components/Contact' 
+import Projects from './components/Projects'
+
 
 function App() {
   const student = 'Halgeir Geirson'
@@ -15,6 +17,7 @@ function App() {
     <div>
       <Header student={student} degree={degree} points={points} />
       <Experiences experienceOne={experienceOne} experienceTwo={experienceTwo} />
+      <Projects />
       <Contact email={email} />
     </div>
   )

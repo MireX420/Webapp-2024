@@ -1,6 +1,6 @@
 import Experience from './Experience'
 
-export default function Experiences({ experienceOne, experienceTwo }) {
+export default function Experiences({ experienceOne, experienceTwo } : {experienceOne : string, experienceTwo : string}) {
     return (
       <div>
         <Experience description={experienceOne} />
@@ -8,3 +8,4 @@ export default function Experiences({ experienceOne, experienceTwo }) {
       </div>
     )
   }
+  

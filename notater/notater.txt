@@ -1,0 +1,7 @@
+For å starte opp server:
+
+lage mappe (kalle backend)
+
+npm create hono@latest
+
+så skrive inn Cors

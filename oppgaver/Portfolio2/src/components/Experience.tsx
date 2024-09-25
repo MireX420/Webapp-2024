@@ -1,4 +1,4 @@
-export default function Experience(props){
+export default function Experience(props : any){
     
     return (
         <>
