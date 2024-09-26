@@ -1,8 +1,8 @@
-export default function Experience(props : any){
+export default function Experience({children}: {children: React.ReactNode}){
     
     return (
         <>
-        <p>{props.description}</p>
+        <p>{children}</p>
         </>
     )
 }

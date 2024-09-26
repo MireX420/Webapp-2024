@@ -1,11 +1,14 @@
-import Experience from './Experience'
+import Experience from './Experience';
 
-export default function Experiences({ experienceOne, experienceTwo } : {experienceOne : string, experienceTwo : string}) {
-    return (
-      <div>
-        <Experience description={experienceOne} />
-        <Experience description={experienceTwo} />
-      </div>
-    )
-  }
+export default function Experiences({ experiences }: { experiences: Array<{ name: string }> }) {
+  return (
+    <div>
+      {experiences.map((exp, index) => (
+        <Experience key={index}>
+          {exp.name}
+        </Experience>
+      ))}
+    </div>
+  );
+}
   

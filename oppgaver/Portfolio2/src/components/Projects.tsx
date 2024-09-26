@@ -1,12 +1,12 @@
 import Project from "./Project"
 
-type Project = {
+type ProjectType = {
     title: string
     description: string
   }
 
   export default function Projects() {
-    const projects: Project[] = [
+    const projects: ProjectType[] = [
       { title: 'Portfolio Website', description: 'A personal portfolio to showcase my projects.' },
       { title: 'E-commerce Platform', description: 'An online store for selling products.' },
       { title: 'Blog Platform', description: 'A blog platform for sharing articles.' },

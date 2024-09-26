@@ -1,21 +1,14 @@
 import type { PropsWithChildren } from "react";
+import type { Streak as StreakType } from "./types";
 
-type StreakProps = {
-  id: string;
-  habit: string;
-  streakCount: number;
-};
-
-export default function Streak(
-  props: Readonly<PropsWithChildren<StreakProps>>
-) {
-  const { children, streakCount, habit } = props;
+export default function Streak(props: Readonly<PropsWithChildren<StreakType>>) {
+  const { children, streakCount, habitId } = props;
 
   return (
     <section>
       {children}
       <p>
-        {habit}: {streakCount}
+        HabitId: {habitId}. HabitStreak {streakCount}
       </p>
     </section>
   );

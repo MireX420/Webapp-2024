@@ -1,7 +1,7 @@
-export default function Contact(props){
+export default function Contact(props : any) {
     return (
         <>
-        <p>{props.email}</p>
+            <p>Email: {props.student.email}</p> 
         </>
     )
 }

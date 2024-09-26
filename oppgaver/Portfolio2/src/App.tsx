@@ -4,23 +4,27 @@ import Experiences from './components/Experiences'
 import Contact from './components/Contact' 
 import Projects from './components/Projects'
 
-
 function App() {
-  const student = 'Halgeir Geirson'
-  const degree = 'Bachelor IT'
-  const points = 180
-  const experienceOne = 'Figma UI for customer X'
-  const experienceTwo = 'Website for customer Y'
-  const email = 'student@hiof.no'
+
+  const student = {
+      name: 'Halgeir Geirson',
+      degree: 'Bachelor IT',
+      points: 180,
+      email: 'student@hiof.no',
+      experiences: [
+          { name: 'Figma UI for customer X' },
+          { name: 'Website for customer Y' },
+      ],
+  };
 
   return (
-    <div>
-      <Header student={student} degree={degree} points={points} />
-      <Experiences experienceOne={experienceOne} experienceTwo={experienceTwo} />
-      <Projects />
-      <Contact email={email} />
-    </div>
-  )
+      <main>
+          <Header student={student} />
+          <Experiences experiences={student.experiences} />
+          <Projects />
+          <Contact student={student} />
+      </main>
+  );
 }
 
 
