@@ -7,7 +7,7 @@ type ExperiencesProps = {
 export default function Experiences({ experiences }: ExperiencesProps) {
   return (
     <div>
-      {experiences.length === 0 ? (  // Betingelse for tom liste
+      {experiences.length === 0 ? (
         <p>Ingen erfaringer</p>
       ) : (
         experiences.map((exp, index) => (

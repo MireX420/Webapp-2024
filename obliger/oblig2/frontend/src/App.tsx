@@ -4,16 +4,25 @@ import Experiences from './components/Experiences';
 import Contact from './components/Contact';
 import Projects from './components/Projects';
 import CreateProject from './components/CreateProject';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { ofetch } from 'ofetch';
+
 
 function App() {
-  // Prosjektene våre har nå også en kategori
-  const [projects, setProjects] = useState([
-    { title: 'Portfolio Website', description: 'A personal portfolio to showcase my projects.', category: 'Web Development' },
-    { title: 'E-commerce Platform', description: 'An online store for selling products.', category: 'Web Development' },
-    { title: 'Blog Platform', description: 'A blog platform for sharing articles.', category: 'Content Creation' },
-    { title: 'Social Media App', description: 'A social media app to connect with friends.', category: 'App Development' },
-  ]);
+  
+  type ProjectType = {
+    title: string;
+    description: string;
+    category: string;
+  };
+
+  const [projects, setProjects] = useState<ProjectType[]>([]);
+
+  useEffect(() => {
+    ofetch('http://localhost:3000/projects')
+      .then((data) => setProjects(data))
+      .catch((error) => console.error('Error fetching projects:', error));
+  }, []);
 
   const addProject = (newProject: { title: string; description: string; category: string }) => {
     setProjects([...projects, newProject]);
@@ -38,8 +47,8 @@ function App() {
     <main>
       <Header student={student} />
       <Experiences experiences={student.experiences} />
-      <Projects projects={projects} removeProject={removeProject} /> {/* Send prosjekter */}
-      <CreateProject addProject={addProject} /> {/* Legg til nytt prosjekt */}
+      <Projects projects={projects} removeProject={removeProject} />
+      <CreateProject addProject={addProject} /> 
       <Contact student={student} />
     </main>
   );

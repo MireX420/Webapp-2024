@@ -13,18 +13,14 @@ export default function Contact({ student }: ContactProps) {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-
-    // Enkel validering
     if (name.trim() === '' || message.trim() === '') {
       alert('Vennligst fyll ut begge feltene.');
       return;
     }
 
-    // Lagre dataen som ble sendt inn
+  
     const formData = { name, message };
     setSubmittedData(formData);
-
-    // Nullstille skjemaet
     setName('');
     setMessage('');
   };
@@ -39,7 +35,7 @@ export default function Contact({ student }: ContactProps) {
             id="name"
             type="text"
             value={name}
-            onChange={(e) => setName(e.target.value)}  // Oppdaterer state med input-verdi
+            onChange={(e) => setName(e.target.value)}  
             required
           />
         </div>
@@ -48,14 +44,13 @@ export default function Contact({ student }: ContactProps) {
           <textarea
             id="message"
             value={message}
-            onChange={(e) => setMessage(e.target.value)}  // Oppdaterer state med textarea-verdi
+            onChange={(e) => setMessage(e.target.value)}  
             required
           />
         </div>
         <button type="submit">Send</button>
       </form>
 
-      {/* Viser de sendte dataene som JSON når skjemaet er sendt inn */}
       {submittedData && (
         <div>
           <h3>Data som ble sendt inn:</h3>

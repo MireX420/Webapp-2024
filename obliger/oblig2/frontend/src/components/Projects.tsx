@@ -12,19 +12,18 @@ type ProjectsProps = {
 };
 
 export default function Projects({ projects, removeProject }: ProjectsProps) {
-  // Bruk `reduce` til å gruppere prosjekter etter kategori og telle antall i hver kategori
-  const projectCountByCategory = projects.reduce((acc: { [key: string]: number }, project) => {
-    acc[project.category] = (acc[project.category] || 0) + 1;
-    return acc;
+
+  const projectCountByCategory = projects.reduce((count: { [key: string]: number }, project) => {
+    count[project.category] = (count[project.category] || 0) + 1;
+    return count;
   }, {});
 
   return (
     <div>
-      {/* Vise totalen per kategori */}
       <h3>Prosjektantall per kategori:</h3>
       {Object.entries(projectCountByCategory).map(([category, count]) => (
         <p key={category}>
-          <strong>{category}</strong>: {count} prosjekter
+          <span>{category}</span>: {count} prosjekter
         </p>
       ))}
 
@@ -33,8 +32,7 @@ export default function Projects({ projects, removeProject }: ProjectsProps) {
       ) : (
         projects.map((project, index) => (
           <div key={index}>
-            <Project title={project.title} description={project.description} />
-            <p>Kategori: {project.category}</p>
+            <Project title={project.title} description={project.description} category={project.category} />
             <button onClick={() => removeProject(index)}>Fjern</button>
           </div>
         ))
